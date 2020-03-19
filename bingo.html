@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<header>
+<title>VFS Bingo</title>
+<script>
+		function SetZ(){
+			var slides = document.getElementsByClassName("but");
+			for (var i = 0; i < slides.length; i++) {
+   				slides[i].style.zIndex =10;
+				console.log("loop");
+			}
+		}
+		function Toggle(i){
+			console.log(document.getElementById(i).style.zIndex);
+			
+			if(document.getElementById(i).style.zIndex=="10"){
+			   document.getElementById(i).style.backgroundColor = 'rgba(26,118,4,1.00)';
+				document.getElementById(i).style.zIndex = 11;
+			   }
+			else{
+				document.getElementById(i).style.backgroundColor = 'rgba(162,0,0,1.00)';
+				document.getElementById(i).style.zIndex = 10;
+			}
+		}
+	</script>
+</header>
+<link href="style.css" rel="stylesheet" type="text/css">
+<body onload="SetZ()">
+VFS Online Bingo V1.0&nbsp; Last updated: 3/18/20	<span>
+<h2>VFS Zoom Bingo</h2>
+		<p>During youy next online class, see if you notice or hear anything listed on the squares. Click on tile to toggle it on or off.</p>
+		<br>
+	</span>
+	<div class="game-container">
+	<ul>
+		<li ><button class="but" onclick="Toggle(1)" id="1"><div class="box">Someone can't unmute&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(2)" id="2"><div class="box">Person joining from unsual location&nbsp;&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(3)" id="3"><div class="box">Tiny room in background&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(4)" id="4"><div class="box">RGB keyboard&nbsp;&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(5)" id="5"><div class="box">"Canyou hear me?"</div></button></li>
+		<li ><button class="but" onclick="Toggle(6)" id="6"><div class="box">SUPER LOUD MIC</div></button></li>
+		<li ><button class="but" onclick="Toggle(7)" id="7"><div class="box">NSFW comment&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(8)" id="8"><div class="box">Can't hear video&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(9)" id="9"><div class="box">Yelling in background&nbsp; </div></button></li>
+		<li ><button class="but" onclick="Toggle(10)" id="10"><div class="box">Someone in background&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(11)" id="11"><div class="box">5FPS Video&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(12)" id="12"><div class="box">"Why did that happen?"&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(13)" id="13"><div class="box">
+		  <p>"Can you hear me?"</p>
+		  <p>Free Space&nbsp;</p>
+		</div></button></li>
+		<li ><button class="but" onclick="Toggle(14)" id="14"><div class="box">Cat interupts&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(15)" id="15"><div class="box">Quiet Mic&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(16)" id="16"><div class="box">Unmuted bathroom break&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(17)" id="17"><div class="box">Video cuts off head&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(18)" id="18"><div class="box">Voice cuts out&nbsp;&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(19)" id="19"><div class="box">NSFW image/video</div></button></li>
+		<li ><button class="but" onclick="Toggle(20)" id="20"><div class="box">poor quality mic&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(21)" id="21"><div class="box">"How do I ___?"&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(22)" id="22"><div class="box">Messy home&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(23)" id="23"><div class="box">Somone wearing PJs&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(24)" id="24"><div class="box">Super close to camera&nbsp;</div></button></li>
+		<li ><button class="but" onclick="Toggle(25)" id="25"><div class="box">Awkard Silence&nbsp;</div></button></li>
+		
+	
+	</ul>
+	</div>
+	
+</body>
+<footer>
+	<p>&nbsp;</p>
+	</footer>
+</html>
