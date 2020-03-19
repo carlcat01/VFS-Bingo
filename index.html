@@ -37,7 +37,6 @@
 			"Person joining from unsual location",
 			"Tiny room in background",
 			"RGB keyboard",
-			'Can you hear me?',
 			'SUPER LOUD MIC',
 			'NSFW comment',
 			"Can't hear video",
@@ -124,11 +123,11 @@
 		console.log("Generating Valdex");
 		for(var j = 0; j < texts.length;j++){
 			//get random number
-			var num = Math.floor(Math.random()*texts.length);
+			var num = Math.floor(Math.random()*texts.length+1);
 			
 			//validate agains valdex
 			while(valdex.indexOf(num) > -1){
-				num = Math.floor(Math.random()*texts.length);
+				num = Math.floor(Math.random()*texts.length+1);
 			}
 			//console.log(num);
 			valdex[j] = num;
@@ -205,6 +204,6 @@
 	
 </body>
 <footer>
-	VFS Online Bingo V1.7&nbsp; Last updated: 3/18/20	
+	VFS Online Bingo V1.8&nbsp; Last updated: 3/18/20	
 	</footer>
 </html>
