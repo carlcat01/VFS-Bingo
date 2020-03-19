@@ -3,6 +3,7 @@
 <header>
 <title>VFS Bingo</title>
 <script>
+     var playVersion = "clasic";
 		
 		function Toggle(i){
 			//console.log(document.getElementById(i).style.zIndex);
@@ -16,10 +17,22 @@
 				document.getElementById(i).style.zIndex = 10;
 			}
 		}
+    
+    function changeGame(newtype){
+        playVersion = newtype;
+		GetTiles();
+    }
+    
 	function GetTiles(){
 		
+       
+        
 		//List of possable tiles
 		var texts = [
+		];
+        
+        var clasicTex = [
+			'Can you hear me? Free Space',
 			"Someone can't unmute",
 			"Person joining from unsual location",
 			"Tiny room in background",
@@ -43,9 +56,70 @@
 			'Messy home',
 			'Somone wearing PJs',
 			'Super close to camera',
-			'Awkard Silence'
+			'Awkard Silence',
+            'Dog Barking',
+            'Siren',
+			'Submit to moodle',
+			'Check your email',
+			'Two people talk over each other',
+			'"We will figure this out"',
+			'Coronavirus',
+			'Car engine'
 		];
+        
+        var newTex = [
+            '"What did you guys watch this weekend?"',
+			'The three brothers',
+			'Email posted to whatsapp',
+			'Jermery',
+			'Someone is late to class',
+			'',
+            
+        ]
 		
+		var wordTex = [
+			'"The" Free Space',
+			'And',
+			'A',
+			'An',
+			'Little',
+			'Big',
+			'Help',
+			'I',
+			'Hey',
+			'Hi',
+			'Can',
+			'You',
+			'We',
+			'Soon',
+			'Open',
+			'Computer',
+			'Paint',
+			'Art',
+			'Astist',
+			'World',
+			'Profesional',
+			'In',
+			'What',
+			'Work',
+			'Look',
+			'Listen',
+		]
+		
+        
+        switch(playVersion){
+            case "clasic":
+                texts = clasicTex;
+                break;
+            case "new":
+                texts = newTex;
+                break;
+			case "words":
+				texts = wordTex;
+				break;
+                
+        }
+        
 		var valdex = new Array();
 		console.log("Generating Valdex");
 		for(var j = 0; j < texts.length;j++){
@@ -72,6 +146,9 @@
 				tiles[i].style.zIndex = 10;
 				tiles[i].style.backgroundColor = 'rgba(162,0,0,1.00)';
 			}
+			var textstr = texts[0];
+			textstr = "<div class='box'>"+textstr+"</div>"
+			tiles[12].innerHTML = textstr;
 	}
 	function getRandom(){
 		
@@ -86,7 +163,10 @@
 	<p>See a mistake or want to add anything, do it yourself by making a git repo and a pull request.  Or ask Carl.</p>
 		<br>
 	<div id="menu-container">
-	<button id="newBoard" onclick="GetTiles()">New Board</button>
+	<button class="menbut" id="newBoard" onclick="GetTiles()">New Board</button>
+		<button class="menbut" id="playclasic" onclick="changeGame('clasic')">Classic</button>
+		<button class="menbut" id="playwords" onclick="changeGame('words')">Words</button>
+		<!--<button class="menbut" id="playnew" onclick="changeGame('new')">FD98 Edition</button>-->
 	</div>
 	</span>
 	<div class="game-container">
@@ -103,7 +183,7 @@
 		<li ><button class="but" onclick="Toggle(10)" id="10"><div class="box">LOAD Error</div></button></li>
 		<li ><button class="but" onclick="Toggle(11)" id="11"><div class="box">LOAD Error</div></button></li>
 		<li ><button class="but" onclick="Toggle(12)" id="12"><div class="box">LOAD Error</div></button></li>
-		<li ><button class="but2" onclick="Toggle(13)" id="13"><div class="box"><p>"Can you hear me?"</p>
+		<li ><button class="but" onclick="Toggle(13)" id="13"><div class="box"><p>"Can you hear me?"</p>
 		  <p>Free Space&nbsp;</p>
 		</div></button></li>
 		<li ><button class="but" onclick="Toggle(14)" id="14"><div class="box">LOAD Error</div></button></li>
@@ -125,6 +205,6 @@
 	
 </body>
 <footer>
-	VFS Online Bingo V1.6&nbsp; Last updated: 3/18/20	
+	VFS Online Bingo V1.7&nbsp; Last updated: 3/18/20	
 	</footer>
 </html>
